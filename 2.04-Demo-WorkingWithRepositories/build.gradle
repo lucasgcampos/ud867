@@ -22,7 +22,7 @@ repositories {
 
 This is a great option if you're migrating an existing project to Gradle, or
 using a dependency that's not available from a remote repository, but it also means
-you forgo a lot Gradle's advanced dependency management features.
+you forgot a lot Gradle's advanced dependency management features.
 
 The `repositories` script block also allows you to use shortcut methods for
 commonly used repositories such as Maven Central, Maven Local, or jCenter.
