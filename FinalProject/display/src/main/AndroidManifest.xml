@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.wai.display" >
+
+    <application>
+
+        <activity android:name=".JokeActivity" />
+
+    </application>
+
+</manifest>
