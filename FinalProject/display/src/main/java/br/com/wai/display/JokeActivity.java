@@ -8,7 +8,6 @@ import android.widget.TextView;
 /**
  * @author Lucas Campos
  */
-
 public class JokeActivity extends AppCompatActivity {
 
     @Override

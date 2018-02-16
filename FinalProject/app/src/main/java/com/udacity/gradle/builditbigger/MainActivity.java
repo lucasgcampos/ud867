@@ -1,12 +1,12 @@
 package com.udacity.gradle.builditbigger;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import br.com.wai.display.JokeActivity;
 import br.com.wai.joke.Joke;
@@ -44,9 +44,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        startActivity(new Intent(this, JokeActivity.class)
-                .putExtra("joke", Joke.tellJoke()));
+        B(this).execute();
     }
 
+
+    class B extends AsyncTask<Void, Void, String> {
+
+        private final AppCompatActivity activity;
+
+        public B(final AppCompatActivity activity) {
+            this.activity = activity;
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            return Joke.tellJoke();
+        }
+
+        @Override
+        protected void onPostExecute(String joke) {
+            activity.startActivity(new Intent(activity, JokeActivity.class)
+                    .putExtra("joke", joke));
+
+        }
+    }
 
 }
